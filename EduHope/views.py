@@ -13,6 +13,9 @@ def about(request):
 def programs(request):
     return render(request, 'programs.html')
 
+def all_programs(request):
+    return render(request, 'all_programs.html')
+
 def contact(request):
     if request.method == 'POST' and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         # Handle AJAX contact form submission
@@ -58,6 +61,9 @@ def impact(request):
 
 def scholarship(request):
     return render(request, 'scholarship.html')
+
+def mentorship(request):
+    return render(request, 'mentorship.html')
 
 def navbar_demo(request):
     return render(request, 'navbar_demo.html')

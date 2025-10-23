@@ -26,10 +26,12 @@ urlpatterns = [
     path("", views.home, name='home'),
     path("about/", views.about, name='about'),
     path("programs/", views.programs, name='programs'),
+    path("programs/all/", views.all_programs, name='all_programs'),
     path("contact/", views.contact, name='contact'),
     path("donate/", views.donate, name='donate'),
     path("impact/", views.impact, name='impact'),
     path("programs/scholarship/", views.scholarship, name='scholarship'),
+    path("programs/mentorship/", views.mentorship, name='mentorship'),
     path("newsletter/subscribe/", views.newsletter_subscribe, name='newsletter_subscribe'),
 ]
 

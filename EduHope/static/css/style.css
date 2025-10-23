@@ -45,10 +45,19 @@ body {
 }
 
 .hero-background {
-  background-image: url('https://images.unsplash.com/photo-1476611550464-4b94f060e1c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-image: url('/static/hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  opacity: 0.65;
+}
+
+.hero-section .container {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 @media (min-width: 992px) {
@@ -57,8 +66,45 @@ body {
   }
 }
 
+@media (max-width: 767.98px) {
+  .hero-section .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .display-3 {
+    font-size: 2.2rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  .img-fluid {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .justify-content-lg-start {
+    justify-content: center !important;
+  }
+}
+
 .text-shadow {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.learn-more-btn {
+  background-color: #9333EA;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #7e22ce;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3);
 }
 
 .donate-btn {
@@ -983,20 +1029,41 @@ body {
     z-index: 1;
   }
   
-/* Scholarship Page Styles */
+/* Scholarship Hero Section */
 .scholarship-hero {
-  margin-top: -1rem;
-}
-
-.scholarship-hero-background {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  background-attachment: scroll;
+  background-image: url('/static/scholar-hero.jpg');
 }
 
 @media (min-width: 992px) {
   .scholarship-hero {
+    margin-top: -2rem;
+  }
+}
+
+/* Mentorship Page Styles */
+.mentorship-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+@media (min-width: 992px) {
+  .mentorship-hero {
     margin-top: -2rem;
   }
 }
@@ -1047,6 +1114,15 @@ body {
   background: linear-gradient(135deg, #1D4ED8 0%, #9333EA 100%);
   position: relative;
   overflow: hidden;
+}
+
+.impact-section .display-5.fw-bold {
+  color: #ffffff !important;
+}
+
+.impact-section .lead {
+  color: #ffffff !important;
+  opacity: 0.9;
 }
 
 .stat-card {
@@ -1182,3 +1258,70 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Hero Component Styles */
+ .hero-section {
+    margin-top: -1rem; /* Compensate for navbar padding */
+  }
+  
+  @media (min-width: 992px) {
+    .hero-section {
+      margin-top: -2rem;
+    }
+  }
+  
+  .hero-background {
+    background-image: url('/static/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .donate-btn {
+    background-color: #1D4ED8;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .donate-btn:hover {
+    background-color: #1e40af;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(29, 78, 216, 0.3);
+  }
+  
+  .learn-more-btn {
+    background-color: #9333EA;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #7e22ce;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3);
+  }
+
+  @media (max-width: 767.98px) {
+    .hero-section .container {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    
+    .display-3 {
+      font-size: 2.2rem;
+    }
+    
+    .lead {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .justify-content-lg-start {
+      justify-content: center !important;
+    }
+  }

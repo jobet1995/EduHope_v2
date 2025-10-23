@@ -1,22 +1,101 @@
-<section class="hero-section scholarship-hero py-5">
-  <div class="scholarship-hero-background position-relative d-flex align-items-center" style="background: linear-gradient(rgba(29, 78, 216, 0.7), rgba(29, 78, 216, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center">
-          <h1 class="display-3 fw-bold text-white mb-4 text-shadow">Opening Doors to Brighter Futures</h1>
-          <p class="lead text-white mb-5 fs-4 text-shadow">
-            Our scholarship programs empower students to achieve their dreams through quality education and financial support.
-          </p>
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="#application" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">
-              Apply Now
-            </a>
-            <a href="#overview" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold">
-              Learn More
-            </a>
-          </div>
+<!-- Hero Section for Scholarship Page -->
+<section class="hero-section position-relative text-white overflow-hidden min-vh-100 d-flex align-items-center">
+  <!-- Background Image with Overlay -->
+  <div class="hero-background position-absolute top-0 start-0 w-100 h-100"></div>
+  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.65;"></div>
+  
+  <!-- Content -->
+  <div class="container position-relative" style="padding-top: 6rem; padding-bottom: 2rem;">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-8 text-center">
+        <!-- Headline -->
+        <h1 class="display-3 fw-bold mb-4 text-shadow">
+          Opening Doors to Brighter Futures
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="lead mb-5 fs-4">
+          Our scholarship programs empower students to achieve their dreams through quality education and financial support.
+        </p>
+        
+        <!-- Call-to-Action Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="#application" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-semibold donate-btn">
+            Apply Now
+          </a>
+          <a href="#overview" class="btn btn-secondary btn-lg rounded-pill px-5 py-3 fw-semibold learn-more-btn">
+            Learn More
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Custom Styles for Hero Section -->
+<style>
+  .hero-section {
+    margin-top: -1rem; /* Compensate for navbar padding */
+  }
+  
+  @media (min-width: 992px) {
+    .hero-section {
+      margin-top: -2rem;
+    }
+  }
+  
+  .hero-background {
+    background-image: url('/static/scholar-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .donate-btn {
+    background-color: #1D4ED8;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .donate-btn:hover {
+    background-color: #1e40af;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(29, 78, 216, 0.3);
+  }
+  
+  .learn-more-btn {
+    background-color: #9333EA;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #7e22ce;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3);
+  }
+
+  @media (max-width: 767.98px) {
+    .hero-section .container {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+    
+    .display-3 {
+      font-size: 2.2rem;
+    }
+    
+    .lead {
+      font-size: 1.1rem;
+    }
+    
+    .donate-btn, .learn-more-btn {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
