@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - EduHope{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="display-5 fw-bold text-primary mb-4">Get in Touch</h1>
+      <p class="lead text-muted mb-5">
+        Have questions or want to learn more about our programs? Reach out to us and we'll get back to you as soon as possible.
+      </p>
+      
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4 p-md-5">
+          <form id="contactForm">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="contactName" class="form-label">Full Name *</label>
+                <input type="text" class="form-control" id="contactName" name="name" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="contactEmail" class="form-label">Email Address *</label>
+                <input type="email" class="form-control" id="contactEmail" name="email" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="contactSubject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="contactSubject" name="subject">
+            </div>
+            <div class="mb-4">
+              <label for="contactMessage" class="form-label">Message *</label>
+              <textarea class="form-control" id="contactMessage" name="message" rows="5" required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg rounded-pill py-3 fw-semibold">
+                Send Message
+              </button>
+            </div>
+          </form>
+          
+          <!-- AJAX Feedback Messages -->
+          <div id="contactFeedback" class="mt-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

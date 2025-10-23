@@ -1,0 +1,120 @@
+<!-- EduHope Navbar Component -->
+<nav class="navbar navbar-expand-lg fixed-top bg-light shadow-sm" id="mainNavbar">
+  <div class="container-fluid px-lg-5">
+    <!-- Logo/Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}" aria-label="EduHope Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#1D4ED8" class="bi bi-heart-fill me-2" viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+      </svg>
+      <span class="fw-bold fs-4 text-primary">EduHope</span>
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active text-primary{% endif %}" 
+             href="{% url 'home' %}" aria-current="{% if request.resolver_match.url_name == 'home' %}page{% endif %}">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active text-primary{% endif %}" 
+             href="{% url 'about' %}" aria-current="{% if request.resolver_match.url_name == 'about' %}page{% endif %}">
+            About
+          </a>
+        </li>
+        
+        <!-- Programs Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Programs
+          </a>
+          <ul class="dropdown-menu border-0 shadow">
+            <li><a class="dropdown-item" href="{% url 'scholarship' %}">Scholarship Program</a></li>
+            <li><a class="dropdown-item" href="#">Mentorship Initiative</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">View All Programs</a></li>
+          </ul>
+        </li>
+        
+        <!-- Events Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu border-0 shadow">
+            <li><a class="dropdown-item" href="#">Upcoming Events</a></li>
+            <li><a class="dropdown-item" href="#">Past Events</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Event Calendar</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'news' %}active text-primary{% endif %}" 
+             href="#" aria-current="{% if request.resolver_match.url_name == 'news' %}page{% endif %}">
+            News
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active text-primary{% endif %}" 
+             href="{% url 'contact' %}" aria-current="{% if request.resolver_match.url_name == 'contact' %}page{% endif %}">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Donate Button - Desktop (Hidden on mobile) -->
+      <div class="d-none d-lg-block">
+        <a href="{% url 'donate' %}" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold donate-btn" role="button" aria-label="Donate to EduHope">
+          Donate Now
+        </a>
+      </div>
+      
+      <!-- Donate Button - Mobile/Tablet (Visible in collapsed menu) -->
+      <div class="d-lg-none w-100 mt-3">
+        <a href="{% url 'donate' %}" class="btn btn-primary rounded-pill w-100 py-2 fw-semibold donate-btn" role="button" aria-label="Donate to EduHope">
+          Donate Now
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- JavaScript for Navbar Behavior -->
+<script>
+  // Sticky Navbar on Scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('mainNavbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  
+  // Close mobile menu when clicking on a link
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.getElementById('navbarContent');
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (navbarCollapse.classList.contains('show')) {
+          bsCollapse.hide();
+        }
+      });
+    });
+  });
+</script>

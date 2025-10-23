@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - EduHope{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+{% include 'components/about_hero.html' %}
+
+<!-- Content Sections -->
+<div id="content">
+  <!-- Mission & Vision Section -->
+  {% include 'components/mission_vision.html' %}
+
+  <!-- Core Values Section -->
+  {% include 'components/core_values.html' %}
+
+  <!-- Impact / Statistics Highlight -->
+  {% include 'components/impact_statistics.html' %}
+
+  <!-- Our Story Section -->
+  {% include 'components/our_story.html' %}
+
+  <!-- Leadership / Team Section -->
+  {% include 'components/leadership_team.html' %}
+
+  <!-- Partners & Sponsors Section -->
+  {% include 'components/partners_sponsors.html' %}
+
+  <!-- Call-to-Action Section -->
+  {% include 'components/cta.html' %}
+
+</div>
+{% endblock %}

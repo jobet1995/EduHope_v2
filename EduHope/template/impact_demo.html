@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Impact - EduHope{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-4 mb-4">Our Impact</h1>
+      <p class="lead">
+        At EduHope, we're committed to transforming lives through education. Here's how we've made a difference in our communities.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Include the Impact Statistics Component -->
+{% include 'components/impact_statistics.html' %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mb-4">More About Our Work</h2>
+      <p>
+        Since our founding, EduHope has worked tirelessly to provide educational opportunities to underserved communities. 
+        Our programs have reached thousands of students, provided scholarships to those in need, and empowered volunteers 
+        to make a lasting impact in their communities.
+      </p>
+      <p>
+        These numbers represent more than just statistics - they represent real lives changed, futures secured, and 
+        communities strengthened through the power of education.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners and Sponsors Component - EduHope</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        /* Custom styles for EduHope */
+        
+        /* Color Variables */
+        :root {
+          --primary-blue: #1D4ED8;
+          --secondary-purple: #9333EA;
+          --accent-yellow: #FBBF24;
+          --light-bg: #F8FAFC;
+          --dark-text: #1F2937;
+        }
+        
+        /* Body Styles */
+        body {
+          font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+          background-color: var(--light-bg);
+          color: var(--dark-text);
+        }
+        
+        /* Partner Logo Styles */
+        .partner-logos .partner-logo {
+          transition: all 0.3s ease;
+        }
+        
+        .partner-logos .partner-logo:hover {
+          transform: translateY(-5px);
+        }
+        
+        .demo-content {
+            padding: 4rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container demo-content">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-4 mb-4">Partners and Sponsors Component</h1>
+          <p class="lead">
+            This is a reusable component showcasing EduHope's partners and sponsors.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners & Sponsors Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <h2 class="display-5 fw-bold text-primary mb-3">Our Partners</h2>
+            <p class="lead text-muted mb-0">
+              Organizations that share our vision and support our mission
+            </p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            <div class="partner-logos d-flex flex-wrap justify-content-center align-items-center gap-5">
+              <div class="partner-logo text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Global Education Foundation">
+                <div class="bg-white p-4 rounded shadow-sm">
+                  <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
+                    <span class="fw-bold text-primary">GEF</span>
+                  </div>
+                </div>
+              </div>
+              <div class="partner-logo text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="United Nations Education Program">
+                <div class="bg-white p-4 rounded shadow-sm">
+                  <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
+                    <span class="fw-bold text-primary">UNEP</span>
+                  </div>
+                </div>
+              </div>
+              <div class="partner-logo text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Tech for Good Initiative">
+                <div class="bg-white p-4 rounded shadow-sm">
+                  <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
+                    <span class="fw-bold text-primary">TFG</span>
+                  </div>
+                </div>
+              </div>
+              <div class="partner-logo text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Community Development Alliance">
+                <div class="bg-white p-4 rounded shadow-sm">
+                  <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
+                    <span class="fw-bold text-primary">CDA</span>
+                  </div>
+                </div>
+              </div>
+              <div class="partner-logo text-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Youth Empowerment Network">
+                <div class="bg-white p-4 rounded shadow-sm">
+                  <div class="d-flex align-items-center justify-content-center" style="height: 80px;">
+                    <span class="fw-bold text-primary">YEN</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container demo-content">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4">Component Usage</h2>
+          <p>
+            This component can be easily integrated into any page using Django's template include mechanism:
+          </p>
+          <pre><code>{% include 'components/partners_sponsors.html' %}</code></pre>
+          <p>
+            The component features:
+          </p>
+          <ul>
+            <li>Responsive grid layout with flexbox wrapping</li>
+            <li>Partner logos with hover effects</li>
+            <li>Tooltip functionality for partner names</li>
+            <li>Consistent styling with EduHope's color scheme</li>
+            <li>Reusable across different pages</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Initialize tooltips -->
+    <script>
+        // Initialize tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>

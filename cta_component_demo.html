@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTA Component - EduHope</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        /* Custom styles for EduHope */
+        
+        /* Color Variables */
+        :root {
+          --primary-blue: #1D4ED8;
+          --secondary-purple: #9333EA;
+          --accent-yellow: #FBBF24;
+          --light-bg: #F8FAFC;
+          --dark-text: #1F2937;
+        }
+        
+        /* Body Styles */
+        body {
+          font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+          background-color: var(--light-bg);
+          color: var(--dark-text);
+        }
+        
+        /* CTA Section Styles */
+        .cta-section {
+          background: linear-gradient(135deg, #1D4ED8 0%, #9333EA 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .cta-background::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.2;
+          z-index: -1;
+        }
+        
+        .cta-primary {
+          background-color: #ffffff !important;
+          color: #1D4ED8 !important;
+          border: none;
+          transition: all 0.3s ease;
+        }
+        
+        .cta-primary:hover {
+          background-color: #f0f0f0 !important;
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-secondary {
+          background-color: transparent !important;
+          color: #ffffff !important;
+          border: 2px solid #ffffff !important;
+          transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+          background-color: rgba(255, 255, 255, 0.1) !important;
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Fade-in animation for elements */
+        .fade-in-element {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in-element.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .demo-content {
+            padding: 4rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container demo-content">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-4 mb-4">CTA Component</h1>
+          <p class="lead">
+            This is a reusable call-to-action component for the EduHope website.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <section class="py-5 py-lg-7 cta-section position-relative overflow-hidden">
+      <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center fade-in-element">
+            <h2 class="display-4 fw-bold text-white mb-4">Join Us in Transforming Education Today</h2>
+            <p class="lead text-white mb-5 mx-auto" style="max-width: 700px;">
+              Your support helps provide quality education to children in need. Together, we can build brighter futures.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="#" class="btn btn-light btn-lg rounded-pill px-5 py-3 fw-semibold cta-primary">
+                <i class="bi bi-heart-fill me-2"></i>Donate Now
+              </a>
+              <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 fw-semibold cta-secondary">
+                <i class="bi bi-hand-thumbs-up-fill me-2"></i>Become a Volunteer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background Elements -->
+      <div class="cta-background"></div>
+    </section>
+
+    <div class="container demo-content">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4">Component Usage</h2>
+          <p>
+            This component can be easily integrated into any page using Django's template include mechanism:
+          </p>
+          <pre><code>{% include 'components/cta.html' %}</code></pre>
+          <p>
+            The component features:
+          </p>
+          <ul>
+            <li>Gradient background with image overlay for visual appeal</li>
+            <li>Two prominent CTA buttons with icons (Donate and Volunteer)</li>
+            <li>Fade-in animation when scrolling into view</li>
+            <li>Hover effects with subtle lift and shadow enhancement</li>
+            <li>Responsive design that works on all screen sizes</li>
+            <li>Reusable across different pages</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS for animations -->
+    <script>
+        // Fade-in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if elements are in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+                    rect.bottom >= 0
+                );
+            }
+
+            // Show elements that are in viewport
+            function showElements() {
+                const elements = document.querySelectorAll('.fade-in-element');
+                elements.forEach(element => {
+                    if (isInViewport(element)) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+
+            // Initial check on page load
+            showElements();
+
+            // Check on scroll
+            window.addEventListener('scroll', showElements);
+        });
+    </script>
+</body>
+</html>
